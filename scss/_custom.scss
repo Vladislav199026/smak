@@ -1,0 +1,36 @@
+@import "variables";
+$navbar-dark-active-color: $Supernova;
+$navbar-dark-color: $white;
+$navbar-dark-hover-color: $Supernova;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1170px
+) !default;
+
+$font-family-base: 'Oswald', sans-serif;
+// $grid-gutter-width: 0rem;
+$navbar-padding-y: 0rem;
+$navbar-padding-x: 0rem;
+$navbar-brand-padding-y: 0rem;
+$nav-link-font-size: 0.875rem;
+$nav-link-font-weight: 700;
+$navbar-nav-link-padding-x: 0rem;
+$nav-link-padding-y: 0rem;
+$h1-font-size: 4.125rem;
+$headings-font-weight: 600;
+$headings-color: $white;
+$headings-font-family: 'Oswald', sans-serif;
+$headings-margin-bottom: 0rem;
+$btn-border-radius: none;
+$btn-padding-y: 0.76rem;
+$btn-padding-x: 2.97rem;
+$btn-font-family: 'Oswald', sans-serif;
+$btn-font-size: 1.22rem;
+$btn-font-weight: 600;
+
+
+
