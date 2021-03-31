@@ -182,6 +182,8 @@ ul.burger-list{
 .bg-intro{
   height: calc(100vh - 100px);
   background: $Firefly;
+  min-height: 550px;
+  position: relative;
   .bg-intro-line{
   background: $gableGreen;
     .intro-align{
