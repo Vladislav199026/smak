@@ -1,4 +1,5 @@
  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap');
+
 // helper for visuale responsive
 // body {
  
@@ -52,16 +53,11 @@
 // end of helper
 
 // header
-
-body{
-    min-height: 650px;
-}
-
-
 .burger{
   label{
      @include media-breakpoint-up(lg){
        display: none;
+       z-index: 10;
      }
   }
   input[type="checkbox"]{
@@ -74,13 +70,20 @@ body{
   label{
     width: 60px;
     height:45px;
-    border:1px solid grey;
+    border:1px solid $Alto;
     position: relative;
     cursor: pointer;
+    z-index: 10;
+    &:hover{
+      border-color: $white;
+    }
+    &:active{
+      box-shadow: 0px 0px 7px 0px $white;
+    }
     span{
       width:26px;
       height: 2px;
-      background: grey;
+      background: $Alto;
       position: absolute;
       background: $white;
       left: calc(50% - 13px);
@@ -104,15 +107,16 @@ ul.burger-list{
     flex-direction: column;
     justify-content: center;
     background: $gableGreen;
-
-    width:100%;
+    z-index: 3;
+    width: 100%;
     height: calc(100vh - 100px);
     align-items: center;
     transform: translate(0, -200vh);
     transition: transform 1s ease;
-    position: absolute;
+    position: fixed;
     li{
-      padding-bottom: 25px;
+      padding-bottom: 15px;
+      padding-left: 0px;
       a{
         font-size: 26px;
       }
@@ -122,18 +126,17 @@ ul.burger-list{
     }
   }
 }
-
-
-
-
 .bg-color-of-header{
   background: $gableGreen;
-  height: 100px;
-  position: inherit;
+  width: 100%;
+  nav{
+    height: 100px;
+  }
 }
 .logo{
   width:105px;
   padding-bottom: 10px;
+  z-index: 10;
   img{
     padding-right: 5px;
   }
@@ -158,14 +161,14 @@ ul.burger-list{
     padding-bottom: 0.17rem;
     position: relative;
     a{
-    text-transform: uppercase;
-    letter-spacing: .5px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    &:last-child a{
+      padding-right: 0rem;
+      outline:none
+    }
   }
-  &:last-child a{
-    padding-right: 0rem;
-    outline:none
-  }
-}
 }
 .point{
   content:"";
@@ -181,10 +184,50 @@ ul.burger-list{
   background: $Firefly;
   .bg-intro-line{
   background: $gableGreen;
-  height: 370px;
-  // position: relative;
+    .intro-align{
+      height: 370px;
+      padding: 51px 0px 64px;
+      @include media-breakpoint-down(lg){
+        height: 300px;
+        padding: 40px 0px 53px;
+      }
+      @include media-breakpoint-down(md){
+        height: 250px;
+        padding: 29px 0px 40px;
+      }
+      @include media-breakpoint-down(sm){
+        height: 200px;
+        padding: 25px 0px 25px;
+      }
+      h1{
+        text-align: center;
+        letter-spacing: -1px;
+        @include media-breakpoint-down(lg){
+        font-size: 3.25rem;
+        }
+        @include media-breakpoint-down(md){
+          font-size: 2.5rem;
+        }
+        @include media-breakpoint-down(sm){
+          font-size: 1.9rem;
+        }  
+      }
+      .custom-btn{
+        @include media-breakpoint-down(lg){
+          padding: 0.56rem 2.5rem;
+        }
+        @include media-breakpoint-down(md){
+          padding: 0.46rem 2.0rem;
+          font-size: 1.2rem;
+        }
+        @include media-breakpoint-down(sm){
+          padding: 0.36rem 1.8rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
   }
-span{
+  span{
     width:60px;
     height: 60px;
     background: $Supernova;
@@ -192,6 +235,21 @@ span{
     position: absolute;
     bottom:0px;
     right: calc(50% - 30px);
+    @include media-breakpoint-down(lg){
+      width:56px;
+      height: 56px;
+      right: calc(50% - 28px);
+    }
+    @include media-breakpoint-down(md){
+      width:50px;
+      height: 50px;
+      right: calc(50% - 25px);
+    }
+    @include media-breakpoint-down(sm){
+      width:46px;
+      height: 46px;
+      right: calc(50% - 23px);
+    }
     &:before{
       background: url('../sprite/sprite.png') no-repeat -85px -30px;
       width: 20px;
@@ -204,15 +262,4 @@ span{
     }
   }
 }
-.bg-intro-line{
-  background: $gableGreen;
-  .intro-align{
-    height: 370px;
-    padding: 52px 0px 65px;
-  }
-  h1{
-    text-align: center;
-    letter-spacing: -1px;
-    
-  }
-}
+
